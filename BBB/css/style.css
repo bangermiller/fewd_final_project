@@ -1,0 +1,38 @@
+header {
+	background: grey;
+	height: 200px;
+	font-size: 20px;
+	margin: 17px;
+}
+.title {
+	font-size: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 20px;
+	border-bottom: solid;
+}
+header ul {
+	display: flex;
+	justify-content: space-around;
+	font-size: 24px;
+	border-top: solid;
+	padding-top: 10px;
+	box-sizing: border-box;
+
+}
+header ul li {
+	border-bottom: solid;
+	display: flex;
+	justify-content: space-around;
+
+	padding-top: 20px;
+
+	
+}
+
+header .menu {
+	
+
+}
