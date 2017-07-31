@@ -26,13 +26,28 @@ header ul li {
 	border-bottom: solid;
 	display: flex;
 	justify-content: space-around;
-
 	padding-top: 20px;
 
 	
 }
 
-header .menu {
-	
+.aboutMe {
+	height: 500px;
+	display: flex;
+	align-items: center;
+}
+.aboutMe img {
+	margin: auto;
+	width: 50%;
+	height: auto;
+	display: flex;
+	justify-content: center;
 
+
+
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: black;
 }
