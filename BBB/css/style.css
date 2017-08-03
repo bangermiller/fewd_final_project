@@ -62,7 +62,7 @@ main {
 	box-sizing: border-box;
 }
 
-.paragraph a, .aboutMeP a{
+.paragraph a, .aboutMeP a, .to-find a {
 	font-weight: bolder;
 }
 
@@ -112,8 +112,32 @@ main {
 	justify-content: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	box-sizing: border-box;
 }
 
+.workouts {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 20px;
+}
+
+.workouts img {
+	height: 480px;
+	width: 370px;
+	
+}
+
+.to-find {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.to-find a {
+	font-size: 40px;
+}
 
 a:hover, a:visited, a:link, a:active
 {
