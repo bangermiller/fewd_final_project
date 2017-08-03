@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
 <script src="//content.jwplatform.com/libraries/5QOesuLn.js"></script>
@@ -12,40 +11,63 @@
 
 
 <body>
-<p>This demo uses an array of feed IDs to generate a tabbed playlist view. After all feeds are fetched with the JW Platform Delivery API, the view is created using a Handlebars.js template and the player is initialized with the first playlist. Context is maintained between the view and the player, even when individual videos are present in more than one playlist.</p>
+	<header>
+      <h1 class="title">
+      BUILT BY BONNIE
+      </h1>
 
+      	<nav class="menu">
+  			<ul>
+    			<li><a href="//index.html">Home</a></li>
+    			<li><a href="./pages/aboutMe/index.html">About Me</a></li>
+    			<li><a href="./pages/workouts/workouts.html">Workouts</a></li>
+    			<li><a href="#">Articles</a></li>
+  			</ul>
+		</nav>
+    </header>
+
+    <main>
+	<section class="head-of-video section-flex">
+		<div>
+			<p>This is the video section of the site. Please use these as a guide to what type of workout you are looking for.</p>
+		</div>
+
+	</section class="video-playlist section-flex">
 <hr>
+	<section class="video-playlist">
+		<div class="overflow-wrapper">
+			<div class="demo-wrapper">
+				<div id="player"></div>
+				<div id="js-playlists" class="playlists"></div>
+			</div>
+		</div>
 
-<div class="overflow-wrapper">
-	<div class="demo-wrapper">
-		<div id="player"></div>
-		<div id="js-playlists" class="playlists"></div>
-	</div>
-</div>
+		<template id="js-playlist-template">
+			<div class="playlist-switcher">
+			{{#each this}}
+				<a class="js-playlist-link playlist-link{{#if @first}} is-active{{/if}}" href="#" data-feedid="{{feedid}}">{{title}}</a>
+			{{/each}}
+			</div>
+			{{#each this}}
+			<div class="js-playlist playlist-container{{#if @first}} is-active{{/if}}" data-feedid="{{feedid}}">
+				<ul class="playlist">
+				{{#each playlist}}
+					<li>
+						<a class="js-video-link playlist-item" href="{{link}}" data-mediaid="{{mediaid}}">
+							<img src="{{image}}" alt="{{title}}">
+							<span>{{title}}</span>
+						</a>
+					</li>
+				{{/each}}
+				</ul>
+			</div>
+			{{/each}}
+			</template>
+	</section>
+	<main>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="js_video/app.js"></script>	
 
-<template id="js-playlist-template">
-	<div class="playlist-switcher">
-	{{#each this}}
-		<a class="js-playlist-link playlist-link{{#if @first}} is-active{{/if}}" href="#" data-feedid="{{feedid}}">{{title}}</a>
-	{{/each}}
-	</div>
-	{{#each this}}
-	<div class="js-playlist playlist-container{{#if @first}} is-active{{/if}}" data-feedid="{{feedid}}">
-		<ul class="playlist">
-		{{#each playlist}}
-			<li>
-				<a class="js-video-link playlist-item" href="{{link}}" data-mediaid="{{mediaid}}">
-					<img src="{{image}}" alt="{{title}}">
-					<span>{{title}}</span>
-				</a>
-			</li>
-		{{/each}}
-		</ul>
-	</div>
-	{{/each}}
-	</template>
-<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="js_video/app.js"></script>	
 </body>
 </html>

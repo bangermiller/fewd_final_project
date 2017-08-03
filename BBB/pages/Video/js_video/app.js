@@ -1,8 +1,10 @@
+console.log("loaded!");
 (function() {
   var apiRoute = 'https://cdn.jwplayer.com/v2/playlists/',
       feeds = [
-        '3Uy44Oe3',
-        'DUN8UEub'
+        'DUN8UEub',
+        '3Uy44Oe3'
+
       ],
       playlistsTemplate = $('#js-playlist-template').html(),
       playerInstance;

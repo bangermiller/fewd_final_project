@@ -1,4 +1,4 @@
-console.log("loaded!");
+console.log("loaded now!");
 var player = jwplayer('player');
 
 player.setup({
