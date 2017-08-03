@@ -1,63 +1,25 @@
-// Start Playlist Overlay Example
-function initInPlayer() {
-  jwplayer('in-player-demo').setup({
-    displaytitle: true,
-    logo: false,
-    playlist: 'https://cdn.jwplayer.com/v2/playlists/DUN8UEub'
-    // By default, the parameter visualplaylist is true.
-  });
-};
 
-initInPlayer('6tYY3mSy');
-// End Playlist Overlay Example
+var playerInstance = jwplayer("player");
+playerInstance.setup({
+    playlist: "//cdn.jwplayer.com/v2/playlists/DUN8UEub",
+    displaytitle: false,
+    width: "550",
+    height: "315"
+});
 
-// Start Playlist Shelf Example
-function initOutPlayer() {
-  var playerInstance = jwplayer('out-player-demo')
-    .setup({
-      displaytitle: false,
-      logo: false,
-      autostart: false,
-      playlist: 'https://cdn.jwplayer.com/v2/playlists/DUN8UEub',
-      width: '100%',
-      aspectratio: '16:9',
-      visualplaylist: false
-    });
+var list = document.getElementById("list");
+var html = list.innerHTML;
 
-  initPlaylist(playerInstance);
+playerInstance.on('ready', function() {
+    var playlist = playerInstance.getPlaylist();
+    for (var index = 0; index < playlist.length; index++) {
+        var playindex = index + 1;
+        html += "<li><span class='dropt' title='" + playlist[index].title + "'><a href='javascript:playThis(" + index + ")'><img height='75' width='110' src='" + playlist[index].image + "'</img></br>" + playlist[index].title + "</a></br><span style='width:600;'</span></span></li>"
+        list.innerHTML = html;
+    }
+
+});
+
+function playThis(index) {
+    playerInstance.playlistItem(index);
 }
-
-function initPlaylist(player) {
-  $.ajax(player.getPlaylist()).then(function(data) {
-    var playlistWrapper = $('.playlist-wrapper');
-    var playlistTemplate = Handlebars.compile($('#out-player-playlist-template').html());
-    playlistWrapper.html(playlistTemplate(data));
-
-    playlistWrapper.on('click', '.playlist-item-link', setVideo.bind(this, data.playlist, player));
-    player.on('playlistItem', setActive);
-  });
-}
-
-function setVideo(playlist, player, e) {
-  var currentVideo = $(e.target).closest('a').data('mediaid');
-  var videoIndex = playlist.findIndex(function(video) {
-    return currentVideo === video.mediaid;
-  });
-
-  e.preventDefault();
-
-  player.playlistItem(videoIndex);
-}
-
-function setActive(e) {
-  var id = e.item.mediaid;
-
-  $('.playlist-item-link').removeClass('active')
-    .filter(function(item) {
-      return $(this).data('mediaid') === id;
-    })
-    .addClass('active');
-}
-
-initOutPlayer('6tYY3mSy');
-// End Playlist Shelf Example

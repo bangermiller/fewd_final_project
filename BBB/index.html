@@ -2,6 +2,8 @@
 <head>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <script src="//content.jwplatform.com/libraries/3oUl48r1.js"></script>
+    
     <title>BuiltByBonnie</title>
   </head>
 
@@ -14,7 +16,7 @@
       	<nav class="menu">
   			<ul>
     			<li><a href="./pages/aboutMe/index.html">About Me</a></li>
-    			<li><a href="#">Video</a></li>
+    			<li><a href="./pages/Video/index.html">Video</a></li>
     			<li><a href="./pages/workouts/workouts.html">Workouts</a></li>
     			<li><a href="#">Articles</a></li>
   			</ul>
@@ -22,25 +24,48 @@
     </header>
 
     <main>
-      <section class="aboutMe">
-      <h3 class="aboutMeTitle"></h3>
-      <p>
-      <img src="./images/b_Ego2.jpg" alt="Me & Eegs">
+      <section class="aboutMe section-flex">
+      
+        <div class="aboutMeP">
+          <p>
+          Hi. I'm Bonnie.
+          </p>
+          <p>This cute pup that's always trying to steal my mat is Ego. She likes helping with my workouts all the time. Learn more about us <a href="./pages/aboutMe/index.html">here</a></p>
+        </div>
 
-      	
-      </p>
+        <a href="./pages/aboutMe/index.html" target="_blank"><img src="./images/b_Ego2.jpg" alt="Me & Eegs"></a>
         
       </section>
 
-      <section class="videoPlaylist">
+      <section class="videoPlaylist section-flex">
+      <div class="paragraph">
+       <p class="check-it-out">
+          Check out these videos!
+          </p>
+          <p>Ego is here to help with all <a href="./pages/Video/index.html">demonstrations</a></p>
+      </div>
+        <div class="videoPlayer">
+          <p>Move of the day!</p>
+          <div id="player"></div>
+        </div>
         
       </section>
 
-      <section class="nonVideoWorkout">
-        
+      <section class="nonVideoWorkout section-flex">
+        <div>
+           <h3 class="workouts">
+             Workouts!
+            <img src="./images/plankB.jpg" alt="Me & Eegs">
+          </h3>
+          </div>
+        <div>
+            <p>
+             Here you will be able to find all the workouts you need. 
+            </p>
+        </div>  
       </section>
       
-      <section class="nutrition">
+      <section class="nutrition section-flex">
       	
       </section>
     </main>
