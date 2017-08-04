@@ -46,7 +46,7 @@
 
 .playlist-link {
 	align-items: center;
-	background-color: #252525;
+	background-color: #abbcc6;
 	color: #FFF;
 	display: inline-flex;
 	flex: 1 1 auto;
@@ -133,15 +133,15 @@ header ul li {
 	padding-top: 2px;
 	box-sizing: border-box;
 }
-.head-of-video {
-	height: 50px;
-	margin: 0;
-}
 
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
     color: black;
+}
+.head-of-video {
+	height: 50px;
+	margin: 0;
 }
 
 @media screen and (min-width: 768px) {

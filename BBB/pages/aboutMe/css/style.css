@@ -1,0 +1,41 @@
+header {
+	background: grey;
+	height: 90px;
+	font-size: 15px;
+	margin: 2px;
+	box-sizing: border-box;
+}
+.title {
+	font-size: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: solid;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-sizing: border-box;
+
+}
+header .title {
+	margin: 0;
+}
+header ul {
+	padding-top: 7px;
+	display: flex;
+	justify-content: space-around;
+	font-size: 15px;
+	margin: 0;
+	box-sizing: border-box;
+
+}
+header ul li {
+	display: flex;
+	justify-content: space-around;
+	padding-top: 2px;
+	box-sizing: border-box;
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: black;
+}
